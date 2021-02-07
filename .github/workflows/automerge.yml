@@ -1,0 +1,15 @@
+name: automerge
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.13.0"
+        env:
+          GITHUB_TOKEN: "${{ secrets.TOKEN }}"
+          MERGE_LABELS: ""
+          MERGE_DELETE_BRANCH: true
